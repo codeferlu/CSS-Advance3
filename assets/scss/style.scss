@@ -1,0 +1,128 @@
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px
+);
+
+$small: '576px' ;
+$medium: '768px' ;
+$large: '992px' ;
+
+.Nav { 
+    grid-area: Nav; 
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    background-color: rgb(0, 87, 156);
+        .menu {
+            display: none;
+        }
+    }
+    
+    
+    .navizq {
+        display:flex;
+        align-items: center;
+    }
+    .navder {
+        display: flex;
+        align-items: center;
+    }
+
+
+.Section1 { 
+    grid-area: Section1;
+    background-color: aquamarine;
+    height: 100px;
+}
+
+.Section2 { 
+    grid-area: Section2;
+    background-color: red;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    padding-top: 15px;
+    .card {
+display: flex;
+flex-direction: column;
+align-items: center;
+width:min-content;
+border: 1px solid black;
+padding-bottom: 15px;
+
+
+
+
+    }
+    img {
+width: auto;
+    }
+}
+
+.Footer { 
+    grid-area: Footer;
+    background-color: plum;
+    height: 100px;
+}
+
+.pagination {
+    display: inline-block;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    border: 1px solid #ddd;
+}
+
+.pagination a.active {
+    background-color: #4CAF50;
+    color: white;
+    border: 1px solid #4CAF50;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
+
+.pagination a:first-child {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.pagination a:last-child {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.container {  display: grid;
+    grid-template-columns: 0.8fr 1.2fr 1fr;
+    grid-template-rows: 0.4fr 0.4fr 2.6fr 0.6fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    height: 100vh;
+    grid-template-areas:
+    "Nav Nav Nav"
+    "Section1 Section1 Section1"
+    "Section2 Section2 Section2"
+    "Footer Footer Footer";
+    @media (min-width: 768px) {
+        grid-template-areas: 
+        "Nav Section1 Section1"
+        "Nav Section2 Section2"
+        "Footer Section2 Section2";
+        .menu {
+            display: flex;
+        }
+            } 
+
+}
+
